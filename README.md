@@ -70,8 +70,9 @@ make unistall SOURCE_DIR=/path/to/source
 
 4. **Manual installation**
 Run script every 3rd Friday of the month at 12:31 AM
+(3rd XXX must be 15th at least and 21st at most)
+`["$(date +%u)" = "5"]`
 ```bash
-deno
-
+31 0 15-21 * * ["$(date +%u)" = "5"] /path/to/backup.sh [Options] <source dir> <target dir>
 ```
 --- 
