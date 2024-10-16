@@ -3,8 +3,11 @@ SOURCE_DIR ?= /path/to/source
 TARGET_DIR ?= /path/to/backups
 BACKUP_INTERVAL ?= 60 # in minutes
 
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+current_dir := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
+
 # Cron job command
-CRON_JOB = */$(BACKUP_INTERVAL) * * * * ./backup.sh -m 10 $(SOURCE_DIR) $(TARGET_DIR) > /dev/null 2>&1
+CRON_JOB = */$(BACKUP_INTERVAL) * * * * $(current_dir)/backup.sh -m 10 $(SOURCE_DIR) $(TARGET_DIR) > /dev/null 2>&1
 
 install:
 	@echo "Installing cron job..."
