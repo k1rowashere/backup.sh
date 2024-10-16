@@ -5,13 +5,15 @@ The scripts allow you to manage backups of a specified directory while keeping
 track of the maximum number of backups you want to retain.
 
 ## Table of Contents
-
+- [Requirements](#requirements)
 - [Script 1: Backup Script](#script-1-backup-script)
 - [Script 2: Restore Script](#script-2-restore-script)
-- [Usage](#usage)
-- [Options](#options)
-- [Requirements](#requirements)
 - [Running in Cron Jobs](#running-in-cron-jobs)
+
+## Requirements
+
+- Bash shell
+- Basic Unix commands (like `cp`, `mkdir`, `find`, etc.)
 
 ## Script 1: Backup Script
 
@@ -45,26 +47,7 @@ You can choose to restore the latest backup or select from a list of available b
 - `-i`, `--interactive`: Prompts the user to choose which backup to restore.
 - `-h`, `--help`: Display the help message.
 
-## Usage
 
-1. **Creating a Backup**:
-   - Run the backup script by specifying the source and target directories.
-   - Example:
-     ```bash
-     ./backup.sh /path/to/source /path/to/backups
-     ```
-
-2. **Restoring a Backup**:
-   - Run the restore script by specifying the backup directory and the target directory.
-   - Example:
-     ```bash
-     ./restore.sh /path/to/backups /path/to/restore
-     ```
-
-## Requirements
-
-- Bash shell
-- Basic Unix commands (like `cp`, `mkdir`, `find`, etc.)
 
 ## Running in Cron Jobs
 
